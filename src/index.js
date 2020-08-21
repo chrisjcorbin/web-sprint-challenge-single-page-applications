@@ -11,6 +11,14 @@ import {
   useLocation,
   useHistory,
 } from "react-router-dom";
+import style from "styled-components";
+
+const WhiteOut = style.div`
+a {
+  text-decoration: none;
+  color: lightgrey;
+}
+`;
 
 const Header = () => {
     const location = useLocation();
@@ -27,7 +35,9 @@ const Header = () => {
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <Link to="/">Lambda Pizza</Link>{' '}
+      <WhiteOut>
+        <Link to="/">Lambda Pizza</Link>{" "}
+      </WhiteOut>
       <Header />
       <Switch>
         <Route exact path="/" component={App} />
