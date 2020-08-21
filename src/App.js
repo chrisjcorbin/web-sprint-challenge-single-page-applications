@@ -120,7 +120,7 @@ const App = () => {
     <div className="App">
       <FancyPizza>
         <h1 className="welcome">Lambda Pizza</h1>
-        <h2>Our pizza is made fresh!</h2>
+        <h2>Our Pizza is made fresh every order!</h2>
       </FancyPizza>
       <OrderForm
         values={formValues}
