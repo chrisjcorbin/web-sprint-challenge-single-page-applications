@@ -7,6 +7,7 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
+  Link,
   useLocation,
   useHistory,
 } from "react-router-dom";
@@ -24,13 +25,15 @@ const Header = () => {
 }
 
 ReactDOM.render(
-    <React.StrictMode>
-        <Router>
-            <Header />
-            <Switch>
-                <Route exact path="/" component={App} />
-                <Route path="/pizza" component={OrderForm} />
-            </Switch>
-        </Router>
-    </React.StrictMode>,
-    document.getElementById("root"));
+  <React.StrictMode>
+    <Router>
+      <Link to="/">Lambda Pizza</Link>{' '}
+      <Header />
+      <Switch>
+        <Route exact path="/" component={App} />
+        <Route path="/pizza" component={OrderForm} />
+      </Switch>
+    </Router>
+  </React.StrictMode>,
+  document.getElementById("root")
+);

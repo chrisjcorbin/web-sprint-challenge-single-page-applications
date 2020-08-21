@@ -4,6 +4,29 @@ import formSchema from "./validation/formSchema";
 import * as yup from "yup";
 import Order from "./Order";
 import OrderForm from "./OrderForm";
+import style from "styled-components";
+
+const SuperFancy = style.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+color: white;
+background-color: royalblue;
+padding: 1%;
+margin: 2% auto;
+width: 80%;
+box-shadow: 10px 5px 5px black;
+`;
+
+const FancyPizza = style.div`
+text-align: center;
+h1 {
+  color: ${() => {
+    let hex = () => Math.floor(Math.random() * 255).toString(16);
+    return "#" + hex() + hex() + hex();
+  }};
+}
+`;
 
 const initialOrderForm = {
   name: "",
@@ -95,8 +118,10 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="welcome">Lambda Pizza</h1>
-      <h2>Our pizza is made fresh!</h2>
+      <FancyPizza>
+        <h1 className="welcome">Lambda Pizza</h1>
+        <h2>Our pizza is made fresh!</h2>
+      </FancyPizza>
       <OrderForm
         values={formValues}
         inputChange={inputChange}
@@ -105,10 +130,11 @@ const App = () => {
         disabled={disabled}
         errors={formErrors}
       />
-
-      {orders.map((order) => {
-        return <Order key={order.id} details={order} />;
-      })}
+      <SuperFancy>
+        {orders.map((order) => {
+          return <Order key={order.id} details={order} />;
+        })}
+      </SuperFancy>
     </div>
   );
 };
