@@ -21,6 +21,7 @@ box-shadow: 10px 5px 5px black;
 const FancyPizza = style.div`
 text-align: center;
 h1 {
+  font-size: 4rem;
   color: ${() => {
     let hex = () => Math.floor(Math.random() * 255).toString(16);
     return "#" + hex() + hex() + hex();
@@ -120,7 +121,7 @@ const App = () => {
     <div className="App">
       <FancyPizza>
         <h1 className="welcome">Lambda Pizza</h1>
-        <h2>Our Pizza is made fresh every order!</h2>
+        <h2>Where Pizza is made fresh every order!</h2>
       </FancyPizza>
       <OrderForm
         values={formValues}
