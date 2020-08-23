@@ -23,8 +23,11 @@ describe("Cypress-Testing", () => {
     cy.get('select').should("have.value", "select");
     cy.get('select')
       .select("extra-large")
-      // can attach an assertion right away to the element
       .should("have.value", "extra-large");
+  });
+
+  it("Get the Special request text area and type a special request in it. Use an assertion to check if the text inputted contains the special request you provided (Hint: use the .should assertion)", () => {
+    cy.get('textarea[name="special"]').type("Please draw a dragon on the inside of the box.").should("have.value", "Please draw a dragon on the inside of the box.");
   });
 
   it("Check to see if a user can submit the form data", () => {
