@@ -27,7 +27,7 @@ describe("Cypress-Testing", () => {
   });
 
   it("Get the Special request text area and type a special request in it. Use an assertion to check if the text inputted contains the special request you provided (Hint: use the .should assertion)", () => {
-    cy.get('textarea[name="special"]').type("Please draw a dragon on the inside of the box.").should("have.value", "Please draw a dragon on the inside of the box.");
+    cy.get('textarea[name="special"]').type("Please draw a dragon on the inside of the lid.").should("have.value", "Please draw a dragon on the inside of the lid.");
   });
 
   it("Check to see if a user can submit the form data", () => {
