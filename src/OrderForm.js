@@ -10,6 +10,7 @@ background-color: rebeccapurple;
 padding: 1%;
 margin: 2% auto;
 width: 80%;
+border-radius: 7.5%;
 box-shadow: 10px 5px 5px goldenrod;
 .errors{
     color: red;
@@ -21,7 +22,8 @@ box-shadow: 10px 5px 5px goldenrod;
   }};
   border: none;
   color: white;
-  padding: 2%;
+  padding: 1%;
+  border-radius: 20%;
   text-align: center;
   font-size: .75rem;
 }
@@ -140,6 +142,7 @@ const OrderForm = (props) => {
                 maxLength="100"
                 />
               </label>
+            <br />
             <br />
 
             <button className="submitBtn" disabled={disabled}>

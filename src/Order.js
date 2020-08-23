@@ -5,6 +5,7 @@ const FancyPizza = style.div`
 background-color: black;
 font-weight: bold;
 padding: 2%;
+border-radius: 7.5%;
 `
 
 function Order({ details }) {

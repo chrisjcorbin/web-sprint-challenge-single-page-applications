@@ -18,6 +18,7 @@ background-color: royalblue;
 padding: 1%;
 margin: 2% auto;
 width: 80%;
+border-radius: 7.5%;
 box-shadow: 10px 5px 5px black;
 `;
 
