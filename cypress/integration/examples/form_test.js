@@ -4,6 +4,10 @@ describe("Cypress-Testing", () => {
     cy.url().should("include", "localhost");
   });
 
+  it("Follow Route to /pizza via Order Pizza Now! Button", () => {
+    cy.get("button").click();
+  });
+
   it("Get the Name input and type a name in it. Use an assertion to check if the text inputted contains the name you provided (Hint: use the .should assertion)", () => {
     cy.get('input[name="name"]').type("Chris").should("have.value", "Chris");
   });

@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import axios from "axios";
 import formSchema from "./validation/formSchema";
 import * as yup from "yup";
-import Order from "./Order";
 import OrderForm from "./OrderForm";
 import style from "styled-components";
+import Order from "./Order";
+import Home from "./Home";
+import Links from "./Links";
 
 const SuperFancy = style.div`
 display: flex;
@@ -20,8 +23,8 @@ box-shadow: 10px 5px 5px black;
 
 const FancyPizza = style.div`
 text-align: center;
-h1 {
-  font-size: 4rem;
+a {
+  font-size: 1.5rem;
   color: ${() => {
     let hex = () => Math.floor(Math.random() * 255).toString(16);
     return "#" + hex() + hex() + hex();
@@ -118,11 +121,16 @@ const App = () => {
   }, [formValues]);
 
   return (
-    <div className="App">
-      <FancyPizza>
-        <h1 className="welcome">Lambda Pizza</h1>
-        <h2>Where Pizza is made fresh every order!</h2>
-      </FancyPizza>
+    <Router>
+      <div className="App">
+        <FancyPizza>
+        <Links />
+        </FancyPizza>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/pizza">
       <OrderForm
         values={formValues}
         inputChange={inputChange}
@@ -136,7 +144,10 @@ const App = () => {
           return <Order key={order.id} details={order} />;
         })}
       </SuperFancy>
-    </div>
+          </Route>
+        </Switch >
+      </div >
+    </Router >
   );
 };
 export default App;
