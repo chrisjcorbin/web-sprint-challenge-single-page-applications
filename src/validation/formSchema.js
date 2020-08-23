@@ -10,6 +10,8 @@ const formSchema = yup.object().shape({
     .oneOf(
       ["small", "medium", "large", "extra-large"],
       "What size pizza would you like?"),
+  special: yup
+    .string()
 });
 
 export default formSchema;

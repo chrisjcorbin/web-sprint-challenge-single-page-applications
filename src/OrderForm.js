@@ -129,15 +129,17 @@ const OrderForm = (props) => {
             </div>
             <br />
 
-            <div className="special">
               <label>
                 Special Instructions:
                 <textarea
-                  className="spInBtn"
-                  placeholder="Enter additional instructions"
+                className="specialInput"
+                value={values.special}
+                onChange={onInputChange}
+                placeholder="Enter additional instructions"
+                name="special"
+                maxLength="100"
                 />
               </label>
-            </div>
             <br />
 
             <button className="submitBtn" disabled={disabled}>

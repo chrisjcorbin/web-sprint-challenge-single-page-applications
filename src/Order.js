@@ -1,4 +1,11 @@
 import React from 'react';
+import style from 'styled-components';
+
+const FancyPizza = style.div`
+background-color: black;
+font-weight: bold;
+padding: 2%;
+`
 
 function Order({ details }) {
     return (
@@ -16,6 +23,9 @@ function Order({ details }) {
             </ul>
           </div>
         )}
+        <FancyPizza>
+        <p>Your Special Requests: {details.special}</p>
+        </FancyPizza>
       </div>
     );
 }
